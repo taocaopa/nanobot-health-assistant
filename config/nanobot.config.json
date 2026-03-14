@@ -1,0 +1,49 @@
+{
+  "channels": {
+    "whatsapp": {
+      "enabled": true,
+      "allowFrom": ["*"]
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": "anthropic/claude-3.5-sonnet",
+      "provider": "openrouter",
+      "systemPrompt": "你是用户的个人健康助理。你帮助用户记录健康数据（体重、血压、心率等）、追踪饮食和运动、管理症状、设置健康提醒。你热情、专业、细心，同时保持适度轻松感。重要：你不是医生，不能诊断疾病，发现异常指标时建议及时就医。所有健康数据存储在用户本地，保护隐私。",
+      "skills": [
+        "health_data",
+        "diet_tracker",
+        "exercise_log",
+        "symptom_tracker",
+        "health_reminder",
+        "sleep_analyzer",
+        "step_tracker"
+      ]
+    }
+  },
+  "skills": {
+    "paths": [
+      "./skills"
+    ]
+  },
+  "cron": {
+    "enabled": true,
+    "jobs": [
+      {
+        "name": "morning_health_check",
+        "schedule": "0 8 * * *",
+        "message": "早上好！☀️ 今天记得记录体重和血压哦~"
+      },
+      {
+        "name": "water_reminder",
+        "schedule": "0 */2 * * *",
+        "message": "💧 喝水时间到！起来活动一下，喝一杯水吧~"
+      },
+      {
+        "name": "evening_summary",
+        "schedule": "0 21 * * *",
+        "message": "晚上好！🌙 今天运动了吗？记得记录今天的健康数据~"
+      }
+    ]
+  }
+}

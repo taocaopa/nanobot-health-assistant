@@ -1,0 +1,18 @@
+# NanoBot 健康助理依赖
+
+# 核心框架（需要从上级目录安装）
+# -e ../nanobot-whatsapp
+
+# 数据可视化
+matplotlib>=3.5.0
+numpy>=1.21.0
+
+# 数据处理
+pandas>=1.3.0
+
+# 日期处理
+python-dateutil>=2.8.0
+
+# 可选：高级图表
+# plotly>=5.0.0
+# seaborn>=0.11.0
